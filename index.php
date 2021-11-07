@@ -3,63 +3,83 @@
   <style>
    /*請在這裹撰寫你的CSS*/ 
    *{
-            box-sizing: border-box;
-            font-family: Impact,Comic Sans MS,'monospace';
-        }
-        .div1{
-            width: 702px;
-            height: 492px;
-            margin: auto;
-            text-align: center;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: start;
-            align-content: start;
-            border: 1px solid black;         
-        }
-        .cell{
-            width: 100px;
-            height: 70px;
-            border: 1px solid black;
-            display: inline-block;
-            font-size: 20px;
-            text-align: center;
-        }
-        .cell:hover{
-            background-color: #FFEBCD;
-        }
-        .weeks{
-            background-color: rgb(185, 243, 224);
-            font-size: 38px;
-            padding-top: 10px;
-            width: 100px;
-            height: 70px;
-            border: 1px solid black;
-            display: inline-block;
-            text-align: center;
-        }
-        .cell0,.cell6{
-            color: rgb(255, 0, 0);
-        }
-        .spday{
-            background-color: #F5F5DC;
-            font-size: 16px;
-            font-weight: 900;
-        }
-        .div-title{
-            text-align: center;
-        }
-        .main{
-            display: flex;
-
-        }
-        .section{
-            flex-basis: 50%;
-        }
-        .aside{
-            flex-basis: 50%;
-            
-        }
+        box-sizing: border-box;
+        font-family: Impact,Comic Sans MS,'monospace';
+    }
+    .div1{
+        width: 702px;
+        height: 492px;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-content: start;
+        border: 1px solid black;         
+    }
+    .cell{
+        width: 100px;
+        height: 70px;
+        border: 1px solid black;
+        display: inline-block;
+        font-size: 30px;
+        text-align: center;
+    }
+    .cell:hover{
+        background-color: #FFEBCD;
+    }
+    .weeks{
+        background-color: rgb(185, 243, 224);
+        font-size: 38px;
+        padding-top: 10px;
+        width: 100px;
+        height: 70px;
+        border: 1px solid black;
+        display: inline-block;
+        text-align: center;
+    }
+    .cell0,.cell6{
+        color: rgb(255, 0, 0);
+    }
+    .spday{
+        background-color: #F5F5DC;
+        font-size: 16px;
+        font-weight: 900;
+        
+    }
+    .div-title{
+        text-align: center;
+        font-size: 30px;
+    }
+    a>span{
+        font-size: 20px;
+        color : #8E8E8E;
+    }
+    .main{
+        display: flex;
+        width: 1200px;
+        margin: auto;
+        
+    }
+    .section{
+        flex-basis: 65%;
+        padding: auto;
+        margin: auto;
+        
+    }
+    .aside{
+        flex-basis: 35%;
+        padding: auto;
+        margin: auto;
+    }
+    .aside-year{
+        font-size: 30px;
+        font-family: 'Microsoft YaHei','Noto Sans TC', sans-serif;
+    }
+    a:link,a:visited,a:hover,a:active {
+        color: 	#0072E3;
+        text-decoration: none;
+    }
   </style>
 <body class="main">
 <?php
@@ -135,11 +155,10 @@
 
 <section class="section">
 <div class="div-title">
-        <h1>Perpetual Calendar</h1>
-    <h2><?=$year;?>/<?=$month;?></h3>
-    <a href="index.php?year=<?=$lastyear;?>&month=<?=$lastmonth;?>">Last month</a>
+    <h1><?=$year;?>/<?=$month;?></h1>
+    <a href="index.php?year=<?=$lastyear;?>&month=<?=$lastmonth;?>">Last month<span class="title-day">&nbsp;&nbsp;<?=$lastyear.'/'.$lastmonth;?></span></a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="index.php?year=<?=$nextyear;?>&month=<?=$nextmonth;?>">Next month</a>
+    <a href="index.php?year=<?=$nextyear;?>&month=<?=$nextmonth;?>">Next month<span class="title-day">&nbsp;&nbsp;<?=$nextyear.'/'.$nextmonth;?></span></a>
 </div>
 <?php
 
@@ -168,7 +187,7 @@ for($i=0;$i<7;$i++){
                     // $date=date("$year-$month-$days");
                      echo $days;
                      if(array_key_exists($date,$specialDate)){
-                        echo "<br><br>";
+                        echo "<br>";
                         echo "<span class='spday'>";
                         echo $specialDate[$date]."</span>";
                     }
@@ -182,7 +201,7 @@ for($i=0;$i<7;$i++){
                     // $date=date("$year-$month-$days");
                      echo $days;
                      if(array_key_exists($date,$specialDate)){
-                        echo "<br><br>";
+                        echo "<br>";
                         echo "<span class='spday'>";
                         echo $specialDate[$date]."</span>";
                     }
@@ -209,9 +228,13 @@ for($i=0;$i<60;$i++){
 //  print_r($zodiac);
 //  echo "</pre>";
 $animal=['鼠','牛','虎','兔','龍','蛇','馬','羊','猴','雞','狗','豬'];
-
-echo $zodiac[($year-4)%60] . '年';
+echo "<div class='aside-year'>";
+echo "<h1>Perpetual Calendar</h1>";
+echo $zodiac[($year-4)%60] . '<br>';
 echo $animal[($year-4)%12] . '年';
+echo "<br><br>";
+
+echo "</div>";
 ?>
 </aside>
 </body>
