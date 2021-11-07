@@ -2,6 +2,7 @@
   <title>萬年曆作業</title>
   <style>
    /*請在這裹撰寫你的CSS*/ 
+
    *{
         box-sizing: border-box;
         font-family: Impact,Comic Sans MS,'monospace';
@@ -40,14 +41,15 @@
         border: 1px solid black;
         display: inline-block;
         text-align: center;
+        text-shadow: 1px 1px white, -1px -1px #444;
     }
     .cell0,.cell6{
         color: rgb(255, 0, 0);
     }
     .spday{
-        background-color: #F5F5DC;
-        font-size: 16px;
-        font-weight: 900;
+        background: none;
+        font-size: 18px;
+        font-weight: 800;
         
     }
     .div-title{
@@ -55,19 +57,27 @@
         font-size: 30px;
         background-color: #ACD6FF;
     }
+    .div-title>h1{
+        background: none;
+        font-size: 50px;
+        text-shadow: -1px -1px white, 1px 1px #333;
+    }
     a>span{
         font-size: 20px;
         color : #8E8E8E;
         background-color: #ACD6FF;
+        text-shadow: white 0.1em 0.1em 0.2em;
     }
     .main{
         display: flex;
         width: 1200px;
         margin: auto;
         flex-wrap: wrap;
+        height: 900px;
     }
     .section{
         flex-basis: 65%;
+        height: 700px;
         padding: auto;
         padding-bottom: 30px;
         margin: auto;
@@ -75,19 +85,29 @@
         background-color: #ACD6FF; 
     }
     .aside{
-        color: 	#003060;  
+        color: 	#ECF5FF;  
         flex-basis: 35%;
-        padding: auto;
+        height: 700px;
+        padding: 20px;
         margin: auto;
+        background: url('./image/f01.jpg');
     }
     .aside-year{
+        padding-top: 200px;
         font-size: 30px;
         font-family: 'Microsoft YaHei','Noto Sans TC', sans-serif;
+        background: none;
+        text-shadow: 0.1em 0.1em 0.2em black;
+    }
+    .aside-year>h1{
+        background: none;
+        
     }
     a:link,a:visited,a:hover,a:active {
         color: 	#0072E3;
         text-decoration: none;
         background-color: #ACD6FF;
+        text-shadow: 1px 1px white, -1px -1px #444;
     }
     footer{
     flex-basis: 100%;
@@ -173,65 +193,65 @@
 ?>
 
 <section class="section">
-<div class="div-title">
+   <div class="div-title">
     <h1><?=$year;?>&nbsp;/&nbsp;<?=$month;?></h1>
     <a href="index.php?year=<?=$lastyear;?>&month=<?=$lastmonth;?>">Last month<span class="title-day">&nbsp;&nbsp;<?=$lastyear.'/'.$lastmonth;?></span></a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="index.php?year=<?=$nextyear;?>&month=<?=$nextmonth;?>">Next month<span class="title-day">&nbsp;&nbsp;<?=$nextyear.'/'.$nextmonth;?></span></a>
-</div>
+   </div>
 <?php
-
-echo "<div class='div1'>";
-
-for($i=0;$i<7;$i++){
-    echo "<div class='weeks'>".$td[$i]."</div>";
-}
- for ($i = 0; $i < 6; $i++) {
-     for ($j = 0; $j < 7; $j++) {
-         
-         if (($i == 0 && $j < $firstWeekfirstDay) ) {
-             //第一row且$j<第一天星期不顯示數字
-             echo "<div class='cell cell$j'>";
-             echo "&nbsp;";
-             echo "</div>";
-         } else {
-             echo "<div class='cell cell$j'>";
-             if((($year % 4 == 0) && ($year % 100 !=0)) || ($year % 400 ==0)){
-                 $days=$i * 7 + $j + 1 - $firstWeekfirstDay;
-                 //因為天數字串太長用$days代替,下面else也要在宣告一次
-                 if ($days > $b[$month-1]) {
-                     echo "&nbsp;";
-                 } else {
-                     $date=date("$month-").$days;
-                    // $date=date("$year-$month-$days");
-                     echo $days;
-                     if(array_key_exists($date,$specialDate)){
-                        echo "<br>";
-                        echo "<span class='spday'>";
-                        echo $specialDate[$date]."</span>";
+   
+   echo "<div class='div1'>";
+   
+   for($i=0;$i<7;$i++){
+       echo "<div class='weeks'>".$td[$i]."</div>";
+   }
+    for ($i = 0; $i < 6; $i++) {
+        for ($j = 0; $j < 7; $j++) {
+            
+            if (($i == 0 && $j < $firstWeekfirstDay) ) {
+                //第一row且$j<第一天星期不顯示數字
+                echo "<div class='cell cell$j'>";
+                echo "&nbsp;";
+                echo "</div>";
+            } else {
+                echo "<div class='cell cell$j'>";
+                if((($year % 4 == 0) && ($year % 100 !=0)) || ($year % 400 ==0)){
+                    $days=$i * 7 + $j + 1 - $firstWeekfirstDay;
+                    //因為天數字串太長用$days代替,下面else也要在宣告一次
+                    if ($days > $b[$month-1]) {
+                        echo "&nbsp;";
+                    } else {
+                        $date=date("$month-").$days;
+                       // $date=date("$year-$month-$days");
+                        echo $days;
+                        if(array_key_exists($date,$specialDate)){
+                           echo "<br>";
+                           echo "<span class='spday'>";
+                           echo $specialDate[$date]."</span>";
+                       }
                     }
-                 }
-             } else{
-                $days=$i * 7 + $j + 1 - $firstWeekfirstDay;
-                 if ($days > $a[$month-1]) {
-                     echo "&nbsp;";
-                 } else {
-                     $date=date("$month-").$days;
-                    // $date=date("$year-$month-$days");
-                     echo $days;
-                     if(array_key_exists($date,$specialDate)){
-                        echo "<br>";
-                        echo "<span class='spday'>";
-                        echo $specialDate[$date]."</span>";
+                } else{
+                   $days=$i * 7 + $j + 1 - $firstWeekfirstDay;
+                    if ($days > $a[$month-1]) {
+                        echo "&nbsp;";
+                    } else {
+                        $date=date("$month-").$days;
+                       // $date=date("$year-$month-$days");
+                        echo $days;
+                        if(array_key_exists($date,$specialDate)){
+                           echo "<br>";
+                           echo "<span class='spday'>";
+                           echo $specialDate[$date]."</span>";
+                       }
                     }
-                 }
-             }
-             echo "</div>";
-         }
-     }
- }
- echo "</div>";
- ?>
+                }
+                echo "</div>";
+            }
+        }
+    }
+    echo "</div>";
+?>
  </section>
  <aside class="aside">
 <?php
