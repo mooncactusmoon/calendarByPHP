@@ -15,7 +15,8 @@
         flex-wrap: wrap;
         justify-content: start;
         align-content: start;
-        border: 1px solid black;         
+        border: 1px solid black;
+        color: 	#003060;         
     }
     .cell{
         width: 100px;
@@ -65,9 +66,10 @@
         flex-basis: 65%;
         padding: auto;
         margin: auto;
-        
+        color: 	#003060;  
     }
     .aside{
+        color: 	#003060;  
         flex-basis: 35%;
         padding: auto;
         margin: auto;
