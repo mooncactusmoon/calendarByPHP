@@ -5,6 +5,7 @@
    *{
         box-sizing: border-box;
         font-family: Impact,Comic Sans MS,'monospace';
+        background-color: #D2E9FF;
     }
     .div1{
         width: 702px;
@@ -16,7 +17,7 @@
         justify-content: start;
         align-content: start;
         border: 1px solid black;
-        color: 	#003060;         
+        color: 	#003060;          
     }
     .cell{
         width: 100px;
@@ -25,12 +26,13 @@
         display: inline-block;
         font-size: 30px;
         text-align: center;
+        background-color: #C4E1FF;
     }
     .cell:hover{
         background-color: #FFEBCD;
     }
     .weeks{
-        background-color: rgb(185, 243, 224);
+        background-color:#D2E9FF;
         font-size: 38px;
         padding-top: 10px;
         width: 100px;
@@ -51,22 +53,26 @@
     .div-title{
         text-align: center;
         font-size: 30px;
+        background-color: #ACD6FF;
     }
     a>span{
         font-size: 20px;
         color : #8E8E8E;
+        background-color: #ACD6FF;
     }
     .main{
         display: flex;
         width: 1200px;
         margin: auto;
-        
+        flex-wrap: wrap;
     }
     .section{
         flex-basis: 65%;
         padding: auto;
+        padding-bottom: 30px;
         margin: auto;
-        color: 	#003060;  
+        color: 	#003060;
+        background-color: #ACD6FF; 
     }
     .aside{
         color: 	#003060;  
@@ -81,9 +87,20 @@
     a:link,a:visited,a:hover,a:active {
         color: 	#0072E3;
         text-decoration: none;
+        background-color: #ACD6FF;
+    }
+    footer{
+    flex-basis: 100%;
+    text-align: center;
+    color: rgb(129, 126, 126);
+    font-size: 95%;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    
     }
   </style>
 <body class="main">
+    
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/  
 ?>
@@ -157,9 +174,9 @@
 
 <section class="section">
 <div class="div-title">
-    <h1><?=$year;?>/<?=$month;?></h1>
+    <h1><?=$year;?>&nbsp;/&nbsp;<?=$month;?></h1>
     <a href="index.php?year=<?=$lastyear;?>&month=<?=$lastmonth;?>">Last month<span class="title-day">&nbsp;&nbsp;<?=$lastyear.'/'.$lastmonth;?></span></a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="index.php?year=<?=$nextyear;?>&month=<?=$nextmonth;?>">Next month<span class="title-day">&nbsp;&nbsp;<?=$nextyear.'/'.$nextmonth;?></span></a>
 </div>
 <?php
@@ -239,5 +256,6 @@ echo "<br><br>";
 echo "</div>";
 ?>
 </aside>
+<footer>&copy小月 2021</footer>
 </body>
 <html>
