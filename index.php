@@ -4,7 +4,6 @@
    /*請在這裹撰寫你的CSS*/ 
    *{
             box-sizing: border-box;
-            text-align: center;
             font-family: Impact,Comic Sans MS,'monospace';
         }
         .div1{
@@ -24,20 +23,20 @@
             border: 1px solid black;
             display: inline-block;
             font-size: 20px;
-            
+            text-align: center;
         }
         .cell:hover{
             background-color: #FFEBCD;
         }
         .weeks{
             background-color: rgb(185, 243, 224);
-            font-size: 25px;
+            font-size: 38px;
             padding-top: 10px;
             width: 100px;
             height: 70px;
             border: 1px solid black;
             display: inline-block;
-            font-size: 20px;
+            text-align: center;
         }
         .cell0,.cell6{
             color: rgb(255, 0, 0);
@@ -47,15 +46,27 @@
             font-size: 16px;
             font-weight: 900;
         }
+        .div-title{
+            text-align: center;
+        }
+        .main{
+            display: flex;
+
+        }
+        .section{
+            flex-basis: 50%;
+        }
+        .aside{
+            flex-basis: 50%;
+            
+        }
   </style>
-<body>
-<h1>萬年曆尚未完成</h1>
+<body class="main">
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/  
 ?>
-
 <?php
-//需要再新增紀念日//
+//新增紀念日//
     $specialDate = [
         '1-1' => '元旦',
         '2-14' => '西洋情人節',
@@ -121,7 +132,9 @@
  //30天的有:4.6.9.11
  //閏年2月29天。非閏年2月28天
 ?>
-<div>
+
+<section class="section">
+<div class="div-title">
         <h1>Perpetual Calendar</h1>
     <h2><?=$year;?>/<?=$month;?></h3>
     <a href="index.php?year=<?=$lastyear;?>&month=<?=$lastmonth;?>">Last month</a>
@@ -181,22 +194,25 @@ for($i=0;$i<7;$i++){
  }
  echo "</div>";
  ?>
+ </section>
+ <aside class="aside">
 <?php
 //天干地支年，西元4年為第一個甲子年
- $sky=['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
- $land=['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
- //1984甲子年
- $zodiac=[];
- for($i=0;$i<60;$i++){
-     $zodiac[]=$sky[$i%10] . $land[$i%12];
- }
+$sky=['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
+$land=['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
+//1984甲子年
+$zodiac=[];
+for($i=0;$i<60;$i++){
+    $zodiac[]=$sky[$i%10] . $land[$i%12];
+}
 //  echo "<pre>";
 //  print_r($zodiac);
 //  echo "</pre>";
 $animal=['鼠','牛','虎','兔','龍','蛇','馬','羊','猴','雞','狗','豬'];
 
- echo $zodiac[($year-4)%60] . '年';
- echo $animal[($year-4)%12] . '年';
+echo $zodiac[($year-4)%60] . '年';
+echo $animal[($year-4)%12] . '年';
 ?>
+</aside>
 </body>
 <html>
