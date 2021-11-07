@@ -8,8 +8,8 @@
             font-family: Impact,Comic Sans MS,'monospace';
         }
         .div1{
-            width: 422px;
-            height: 352px;
+            width: 702px;
+            height: 492px;
             margin: auto;
             text-align: center;
             display: flex;
@@ -19,10 +19,11 @@
             border: 1px solid black;         
         }
         .cell{
-            width: 60px;
-            height: 50px;
+            width: 100px;
+            height: 70px;
             border: 1px solid black;
             display: inline-block;
+            font-size: 20px;
             
         }
         .cell:hover{
@@ -32,9 +33,19 @@
             background-color: rgb(185, 243, 224);
             font-size: 25px;
             padding-top: 10px;
+            width: 100px;
+            height: 70px;
+            border: 1px solid black;
+            display: inline-block;
+            font-size: 20px;
         }
         .cell0,.cell6{
             color: rgb(255, 0, 0);
+        }
+        .spday{
+            background-color: #F5F5DC;
+            font-size: 16px;
+            font-weight: 900;
         }
   </style>
 <body>
@@ -48,6 +59,11 @@
         '1-1' => '元旦',
         '2-14' => '西洋情人節',
         '2-28' => '和平紀念日',
+        '3-8' => '婦女節',
+        '4-4' => '兒童節',
+        '5-1' => '勞動節',
+        '8-8' => '父親節',
+        '9-25' => '教師節',
         '10-10' => '雙十節',
         '10-31' => '萬聖節',
         '12-25' => '聖誕節',
@@ -116,7 +132,7 @@
 echo "<div class='div1'>";
 
 for($i=0;$i<7;$i++){
-    echo "<div class='cell weeks'>".$td[$i]."</div>";
+    echo "<div class='weeks'>".$td[$i]."</div>";
 }
  for ($i = 0; $i < 6; $i++) {
      for ($j = 0; $j < 7; $j++) {
@@ -138,8 +154,8 @@ for($i=0;$i<7;$i++){
                     // $date=date("$year-$month-$days");
                      echo $days;
                      if(array_key_exists($date,$specialDate)){
-                        echo "<br>";
-                        echo "<span style='background-color: #F5F5DC;'>";
+                        echo "<br><br>";
+                        echo "<span class='spday'>";
                         echo $specialDate[$date]."</span>";
                     }
                  }
@@ -152,8 +168,8 @@ for($i=0;$i<7;$i++){
                     // $date=date("$year-$month-$days");
                      echo $days;
                      if(array_key_exists($date,$specialDate)){
-                        echo "<br>";
-                        echo "<span style='background-color: #F5F5DC;'>";
+                        echo "<br><br>";
+                        echo "<span class='spday'>";
                         echo $specialDate[$date]."</span>";
                     }
                  }
