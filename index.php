@@ -8,6 +8,10 @@
         font-family: Impact,Comic Sans MS,'monospace';
         background-color: #D2E9FF;
     }
+    body{
+        background: url('./image/f02.jpg');
+
+    }
     .div1{
         width: 702px;
         height: 492px;
@@ -18,7 +22,8 @@
         justify-content: start;
         align-content: start;
         border: 1px solid black;
-        color: 	#003060;          
+        color: 	#003060;
+              
     }
     .cell{
         width: 100px;
@@ -27,13 +32,13 @@
         display: inline-block;
         font-size: 30px;
         text-align: center;
-        background-color: #C4E1FF;
+        background-color: #D1E9E9;
     }
     .cell:hover{
         background-color: #FFEBCD;
     }
     .weeks{
-        background-color:#D2E9FF;
+        background-color:#A3D1D1;
         font-size: 38px;
         padding-top: 10px;
         width: 100px;
@@ -55,7 +60,7 @@
     .div-title{
         text-align: center;
         font-size: 30px;
-        background-color: #ACD6FF;
+        background:none;
     }
     .div-title>h1{
         background: none;
@@ -65,15 +70,17 @@
     a>span{
         font-size: 20px;
         color : #8E8E8E;
-        background-color: #ACD6FF;
+        background:none;
         text-shadow: white 0.1em 0.1em 0.2em;
     }
-    .main{
+    main{
         display: flex;
         width: 1200px;
+        padding-top: 100px;
         margin: auto;
         flex-wrap: wrap;
         height: 900px;
+        background: none;
     }
     .section{
         flex-basis: 65%;
@@ -82,15 +89,18 @@
         padding-bottom: 30px;
         margin: auto;
         color: 	#003060;
-        background-color: #ACD6FF; 
+        
+        background-color: #C4E1E1; 
+        
     }
+    
     .aside{
         color: 	#ECF5FF;  
         flex-basis: 35%;
         height: 700px;
         padding: 20px;
         margin: auto;
-        background: url('./image/f01.jpg');
+        background: url('./image/04.jpg') ;
     }
     .aside-year{
         padding-top: 200px;
@@ -106,21 +116,23 @@
     a:link,a:visited,a:hover,a:active {
         color: 	#0072E3;
         text-decoration: none;
-        background-color: #ACD6FF;
+        background:none;
         text-shadow: 1px 1px white, -1px -1px #444;
+        
     }
     footer{
     flex-basis: 100%;
     text-align: center;
-    color: rgb(129, 126, 126);
-    font-size: 95%;
+    color: white;
+    font-size: 100%;
     padding-top: 15px;
     padding-bottom: 0px;
-    
+    background: none;
+    text-shadow: 0.1em 0.1em 0.2em black;
     }
   </style>
-<body class="main">
-    
+<body>
+<main>
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/  
 ?>
@@ -277,5 +289,6 @@ echo "</div>";
 ?>
 </aside>
 <footer>&copy小月 2021</footer>
+</main>
 </body>
 <html>
