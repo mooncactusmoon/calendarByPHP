@@ -53,6 +53,7 @@
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/  
 ?>
+
 <?php
 //需要再新增紀念日//
     $specialDate = [
@@ -121,7 +122,7 @@
  //閏年2月29天。非閏年2月28天
 ?>
 <div>
-        <h1>Perpetual calendar</h1>
+        <h1>Perpetual Calendar</h1>
     <h2><?=$year;?>/<?=$month;?></h3>
     <a href="index.php?year=<?=$lastyear;?>&month=<?=$lastmonth;?>">Last month</a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -180,5 +181,20 @@ for($i=0;$i<7;$i++){
  }
  echo "</div>";
  ?>
+<?php
+//天干地支年，西元4年為第一個甲子年
+ $sky=['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
+ $land=['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
+ //1984甲子年
+ $zodiac=[];
+ for($i=0;$i<60;$i++){
+     $zodiac[]=$sky[$i%10] . $land[$i%12];
+ }
+//  echo "<pre>";
+//  print_r($zodiac);
+//  echo "</pre>";
+
+ echo $zodiac[($year-4)%60] . '年';
+?>
 </body>
 <html>
