@@ -69,9 +69,10 @@
     }
     a>span{
         font-size: 20px;
-        color : #8E8E8E;
+        color : rgb(159, 178, 207);
         background:none;
-        text-shadow: white 0.1em 0.1em 0.2em;
+        /* text-shadow: white 0.1em 0.1em 0.2em; */
+        text-shadow: -1px -1px black, 1px 1px #333;
     }
     main{
         display: flex;
@@ -90,7 +91,7 @@
         margin: auto;
         color: 	#003060;
         
-        background-color: #C4E1E1; 
+        background-color: rgba(196, 225, 225,0.5); 
         
     }
     
@@ -114,11 +115,11 @@
         
     }
     a:link,a:visited,a:hover,a:active {
-        color: 	#0072E3;
+        color: 	rgb(22, 76, 156);
         text-decoration: none;
         background:none;
-        text-shadow: 1px 1px white, -1px -1px #444;
-        
+        /* text-shadow: 1px 1px white, -1px -1px #444; */
+        text-shadow: -1px -1px white, 1px 1px #333;
     }
     footer{
     flex-basis: 100%;
