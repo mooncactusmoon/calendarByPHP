@@ -193,8 +193,10 @@ for($i=0;$i<7;$i++){
 //  echo "<pre>";
 //  print_r($zodiac);
 //  echo "</pre>";
+$animal=['鼠','牛','虎','兔','龍','蛇','馬','羊','猴','雞','狗','豬'];
 
  echo $zodiac[($year-4)%60] . '年';
+ echo $animal[($year-4)%12] . '年';
 ?>
 </body>
 <html>
