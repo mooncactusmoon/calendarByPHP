@@ -9,7 +9,7 @@
         background-color: #D2E9FF;
     }
     body{
-        background-image: url('./image/b/<?php echo rand(1,6); ?>.jpg');
+        background-image: url('./image/b/<?php echo rand(1,5); ?>.jpg');
         /* background-repeat: round; */
     }
     .div1{
