@@ -9,7 +9,7 @@
         background-color: #D2E9FF;
     }
     body{
-        background: url('./image/b/3.jpg');
+        background-image: url('./image/b/<?php echo rand(1,6); ?>.jpg');
         /* background-repeat: round; */
     }
     .div1{
@@ -100,8 +100,8 @@
         height: 700px;
         padding: 20px;
         margin: auto;
-        background: url('./image/40.jpg') ;
         background-size: 100% 100%;
+        background-image: url('./image/<?php echo rand(1, 68); ?>.jpg');
     }
     .aside-year{
         padding-top: 450px;
