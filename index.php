@@ -9,8 +9,8 @@
         background-color: #D2E9FF;
     }
     body{
-        background: url('./image/f02.jpg');
-
+        background: url('./image/b/3.jpg');
+        /* background-repeat: round; */
     }
     .div1{
         width: 702px;
@@ -93,26 +93,25 @@
         
         background-color: rgba(196, 225, 225,0.5); 
         
-    }
-    
+    } 
     .aside{
         color: 	#ECF5FF;  
         flex-basis: 35%;
         height: 700px;
         padding: 20px;
         margin: auto;
-        background: url('./image/04.jpg') ;
+        background: url('./image/40.jpg') ;
+        background-size: 100% 100%;
     }
     .aside-year{
-        padding-top: 200px;
+        padding-top: 450px;
         font-size: 30px;
         font-family: 'Microsoft YaHei','Noto Sans TC', sans-serif;
         background: none;
         text-shadow: 0.1em 0.1em 0.2em black;
     }
     .aside-year>h1{
-        background: none;
-        
+        background: none;    
     }
     a:link,a:visited,a:hover,a:active {
         color: 	rgb(22, 76, 156);
@@ -122,21 +121,25 @@
         text-shadow: -1px -1px white, 1px 1px #333;
     }
     footer{
-    flex-basis: 100%;
-    text-align: center;
-    color: white;
-    font-size: 100%;
-    padding-top: 15px;
-    padding-bottom: 0px;
-    background: none;
-    text-shadow: 0.1em 0.1em 0.2em black;
+     flex-basis: 100%;
+     text-align: center;
+     color: white;
+     font-size: 100%;
+     padding-top: 15px;
+     padding-bottom: 0px;
+     background: none;
+     text-shadow: 0.1em 0.1em 0.2em black;
     }
   </style>
 <body>
+
+
 <main>
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/  
 ?>
+
+
 <?php
 //新增紀念日//
     $specialDate = [
@@ -265,28 +268,29 @@
     }
     echo "</div>";
 ?>
- </section>
- <aside class="aside">
-<?php
-//天干地支年，西元4年為第一個甲子年
-$sky=['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
-$land=['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
-//1984甲子年
-$zodiac=[];
-for($i=0;$i<60;$i++){
-    $zodiac[]=$sky[$i%10] . $land[$i%12];
-}
-//  echo "<pre>";
-//  print_r($zodiac);
-//  echo "</pre>";
-$animal=['鼠','牛','虎','兔','龍','蛇','馬','羊','猴','雞','狗','豬'];
-echo "<div class='aside-year'>";
-echo "<h1>Perpetual Calendar</h1>";
-echo $zodiac[($year-4)%60] . '<br>';
-echo $animal[($year-4)%12] . '年';
-echo "<br><br>";
-
-echo "</div>";
+</section>
+<aside class="aside">
+    
+ <?php
+   //天干地支年，西元4年為第一個甲子年
+   $sky=['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
+   $land=['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
+   //1984甲子年
+   $zodiac=[];
+   for($i=0;$i<60;$i++){
+       $zodiac[]=$sky[$i%10] . $land[$i%12];
+   }
+   //  echo "<pre>";
+   //  print_r($zodiac);
+   //  echo "</pre>";
+   $animal=['鼠','牛','虎','兔','龍','蛇','馬','羊','猴','雞','狗','豬'];
+   echo "<div class='aside-year'>";
+   echo "<h1>Perpetual Calendar</h1>";
+   echo $zodiac[($year-4)%60] . '<br>';
+   echo $animal[($year-4)%12] . '年';
+   echo "<br><br>";
+   
+   echo "</div>";
 ?>
 </aside>
 <footer>&copy小月 2021</footer>
