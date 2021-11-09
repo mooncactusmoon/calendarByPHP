@@ -284,10 +284,14 @@
    //  print_r($zodiac);
    //  echo "</pre>";
    $animal=['鼠','牛','虎','兔','龍','蛇','馬','羊','猴','雞','狗','豬'];
+   $img=['1','2','3','4','5','6','7','8','9','10','11','12'];
+   $c=($year-4)%12;
    echo "<div class='aside-year'>";
    echo "<h1>Perpetual Calendar</h1>";
-   echo $zodiac[($year-4)%60] . '<br>';
-   echo $animal[($year-4)%12] . '年';
+   echo "<img src='./image/y/$img[$c].png' style='background:none;' width='55px' height='55px' 
+   >";
+   echo '&nbsp' . $zodiac[($year-4)%60];
+//    echo $animal[($year-4)%12] . '年';
    echo "<br><br>";
    
    echo "</div>";
