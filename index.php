@@ -136,8 +136,12 @@
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/  
 ?>
-
-
+<!-- 選擇日期 -->
+<!-- <form action='./index.php'>
+    <input type='number' name='year'>
+    <input type='number' name='month'>
+    <input type='submit'>
+</form> -->
 <?php
 //新增紀念日//
     $specialDate = [
