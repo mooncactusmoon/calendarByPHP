@@ -320,6 +320,7 @@
         position: relative;
         bottom :135px;
         left: 100px;
+        opacity: 0.7;
         }
         .cell22{
         width: 25px;
