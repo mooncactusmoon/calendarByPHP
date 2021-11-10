@@ -30,7 +30,7 @@
         height: 70px;
         border: 1px solid black;
         display: inline-block;
-        font-size: 30px;
+        font-size: 28px;
         text-align: center;
         background-color: #D1E9E9;
     }
@@ -53,9 +53,7 @@
     }
     .spday{
         background: none;
-        font-size: 18px;
-        font-weight: 800;
-        
+        font-size: 15.5px;
     }
     .div-title{
         text-align: center;
@@ -143,17 +141,23 @@
 <?php
 //新增紀念日//
     $specialDate = [
-        '1-1' => '元旦',
-        '2-14' => '西洋情人節',
-        '2-28' => '和平紀念日',
-        '3-8' => '婦女節',
-        '4-4' => '兒童節',
-        '5-1' => '勞動節',
-        '8-8' => '父親節',
-        '9-25' => '教師節',
-        '10-10' => '雙十節',
-        '10-31' => '萬聖節',
-        '12-25' => '聖誕節',
+        '1-1' => "New Year's Day",
+        '2-14' => "Valentine's Day",
+        '2-28' => 'Peace Memorial Day',
+        '3-8' => "Women's Day",
+        '4-1' => "April Fools' Day",
+        '4-4' => "Children's Day",
+        '4-17' => "Easter",
+        '4-22' => "Earth day",
+        '5-1' => 'Labor Day',
+        '8-8' => "Father's Day",
+        '9-28' => "Teachers' Day",
+        '10-4' => 'World Animal Day',
+        '10-10' => 'Double ten Festival',
+        '10-31' => 'Halloween',
+        '11-26' => 'Thanksgiving Day',
+        '12-24' => 'Christmas Eve',
+        '12-25' => 'Christmas',
     ];
   //紀念日每年顯示方法 date('Y-12-25')
 
