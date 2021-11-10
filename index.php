@@ -288,7 +288,7 @@
    $c=($year-4)%12;
    echo "<div class='aside-year'>";
    echo "<h1>Perpetual Calendar</h1>";
-   echo "<img src='./image/y/$img[$c].png' style='background:none;' width='55px' height='55px' 
+   echo "<img src='./image/y/$img[$c].png' style='background:none;opacity:0.9;' width='55px' height='55px' 
    >";
    echo '&nbsp' . $zodiac[($year-4)%60];
 //    echo $animal[($year-4)%12] . '年';
