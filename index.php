@@ -296,8 +296,119 @@
    
    echo "</div>";
 ?>
+<!-- 小月曆 -->
+<style>
+    .current{
+        position: relative;
+        bottom :135px;
+        left: 210px;
+        background: none;
+        text-shadow: 0.1em 0.1em 0.2em black;
+        font-size: 18px;
+    }
+        .div2{
+            width:177px;
+            height: 100px;
+            margin: auto;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-content: start;
+        border: 1px solid black;
+        color: 	#46A3FF;
+        position: relative;
+        bottom :135px;
+        left: 100px;
+        }
+        .cell22{
+        width: 25px;
+        height: 15px;
+        border: 1px solid black;
+        display: inline-block;
+        font-size: 5px;
+        text-align: center;
+        background-color:#ECF5FF;
+    }
+    .weeks2{
+        color: 	#003060;
+        background-color: wheat;
+        font-size: 10px;
+        padding-top: 2px;
+        width: 25px;
+        height: 15px;
+        border: 1px solid black;
+        display: inline-block;
+        text-align: center;
+        text-shadow: 1px 1px white, -1px -1px #444;
+    }
+    </style>
+<?php
+     $a = [31,28,31,30,31,30,31,31,30,31,30,31];
+     $b = [31,29,31,30,31,30,31,31,30,31,30,31];
+     $td=['Sun.','Mon.','Tue.','Wed.','Thu.','Fri.','Sat.'];
+     $firstDay2 = date("Y-m-01");
+     $firstWeekfirstDay2 = date("w", strtotime($firstDay2));
+     $m=date("m");
+     $y=date("Y");
+     $d=date("j");
+     echo "<header class='current'>";
+     echo "Current date".":". $y ."/".  $m;
+     echo "</header>";
+   echo "<div class='div2'>";
+   for($i=0;$i<7;$i++){
+       echo "<div class='weeks2'>".$td[$i]."</div>";
+   }
+    for ($i = 0; $i < 6; $i++) {
+        for ($j = 0; $j < 7; $j++) {
+            
+            if (($i == 0 && $j < $firstWeekfirstDay2) ) {
+                //第一row且$j<第一天星期不顯示數字
+                echo "<div class='cell22 cell$j'>";
+                echo "&nbsp;";
+                echo "</div>";
+            } else {
+                echo "<div class='cell22 cell$j'>";
+                if((($y % 4 == 0) && ($y % 100 !=0)) || ($y % 400 ==0)){
+                    $days=$i * 7 + $j + 1 - $firstWeekfirstDay2;
+                    if ($days > $b[$m-1]) {
+                        echo "&nbsp;";
+                    } else {
+                        $date=date("$m-").$days;
+                        if($days == $d){
+                            echo "<span style='background: #00FFFF'>$d</sapn>";
+                        }else{
+                            
+                            echo $days;
+                        }
+                    }
+                } else{
+                   $days=$i * 7 + $j + 1 - $firstWeekfirstDay2;
+                    if ($days > $a[$m-1]) {
+                        echo "&nbsp;";
+                    } else {
+                        $date=date("$m-").$days;
+                        // echo $days;
+                        
+                        if($days == $d){
+                            echo "<span style='background:#000093;font-size:15px;color:white;'>&nbsp;&nbsp;$d&nbsp;&nbsp;</sapn>";
+                        }else{
+                            
+                            echo $days;
+                        
+                    }
+
+                    }
+                }
+                echo "</div>";
+            }
+        }
+    }
+    echo "</div>";
+?>
+<!-- 小月曆結束 -->
 </aside>
-<footer>&copy小月 2021<br><span style="color:gray;background:none;">圖庫來源:Unsplash</span></footer>
+<footer>&copy小月 2021<br><span style="color:gray;background:none;">圖庫來源:Unsplash & Myself</span></footer>
 </main>
 </body>
 <html>
