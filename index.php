@@ -10,7 +10,8 @@
     }
     body{
         background-image: url('./image/b/<?php echo rand(1,5); ?>.jpg');
-        /* background-repeat: round; */
+        
+         width:100%; 
     }
     .div1{
         width: 702px;
