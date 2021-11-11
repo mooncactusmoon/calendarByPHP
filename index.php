@@ -7,7 +7,7 @@
         box-sizing: border-box;
         font-family: Impact, Comic Sans MS, 'monospace';
         background-color: black;
-        
+
     }
 
     body {
@@ -160,14 +160,14 @@
         margin-top: 300px;
         border: 1px solid #AAFFEE;
         border-left: none;
-        
+
     }
 
     .input {
         display: none;
         position: absolute;
         width: 100px;
-        height: 90px;
+        height: 300px;
         margin-top: 30px;
     }
 
@@ -176,21 +176,23 @@
         width: 100px;
         height: 30px;
         text-align: center;
-        font-size: 13px;
+        font-size: 15px;
         margin-top: 0px;
+
     }
-    
+
     .inquire:hover .input {
         display: block;
         background: none;
-        
+
     }
-    .img{
+
+    .img {
         background: none;
         margin: 0px;
         width: 30px;
         height: 35px;
-        background-color:rgba(0,0,0,0.7) ;
+        background-color: rgba(0, 0, 0, 0.7);
     }
 </style>
 
@@ -201,9 +203,9 @@
         <img src="./image/other/2.png" alt="search" class="img">
         <div class="input">
             <form action='./index.php'>
-                <input type='number' name='year' placeholder="Entry AD year" min="1970">
+                <input type='number' name='year' placeholder="Entry year" min="1970">
                 <input type='number' name='month' placeholder="Entry month" min="1" max="12">
-                <input type='submit' value="Search">
+                <input type='submit' value="Search" style="color:red;">
             </form>
         </div>
         <img src="./image/other/3.png" alt="search" class="img">
