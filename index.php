@@ -7,6 +7,7 @@
         box-sizing: border-box;
         font-family: Impact, Comic Sans MS, 'monospace';
         background-color: black;
+        
     }
 
     body {
@@ -159,13 +160,15 @@
         margin-top: 300px;
         border: 1px solid #AAFFEE;
         border-left: none;
+        
     }
 
     .input {
         display: none;
         position: absolute;
         width: 100px;
-        height: 100px;
+        height: 90px;
+        margin-top: 30px;
     }
 
     input {
@@ -174,11 +177,20 @@
         height: 30px;
         text-align: center;
         font-size: 13px;
+        margin-top: 0px;
     }
-
+    
     .inquire:hover .input {
         display: block;
         background: none;
+        
+    }
+    .img{
+        background: none;
+        margin: 0px;
+        width: 30px;
+        height: 35px;
+        background-color:rgba(0,0,0,0.7) ;
     }
 </style>
 
@@ -186,14 +198,15 @@
 
     <!-- 下面的div是為了做查詢縮放框框 -->
     <div class="inquire">
+        <img src="./image/other/2.png" alt="search" class="img">
         <div class="input">
-
             <form action='./index.php'>
-                <input type='number' name='year' placeholder="Entry AD year">
-                <input type='number' name='month' placeholder="Entry month">
+                <input type='number' name='year' placeholder="Entry AD year" min="1970">
+                <input type='number' name='month' placeholder="Entry month" min="1" max="12">
                 <input type='submit' value="Search">
             </form>
         </div>
+        <img src="./image/other/3.png" alt="search" class="img">
     </div>
     <!-- 選擇日期 -->
     <main>
@@ -476,7 +489,7 @@
             ?>
             <!-- 小月曆結束 -->
         </aside>
-        <footer>&copy小月 2021<br><span style="color:gray;background:none;">圖庫來源:Unsplash & Myself</span></footer>
+        <footer>&copy小月 2021<br><span style="color:gray;background:none;">圖庫來源:Unsplash & Iconshock & Myself</span></footer>
     </main>
 </body>
 <html>
