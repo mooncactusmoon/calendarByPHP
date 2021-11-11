@@ -129,20 +129,30 @@
      background: none;
      text-shadow: 0.1em 0.1em 0.2em black;
     }
+    .inquire{
+       position: fixed;
+       width: 50px;
+       height: 100px;
+       margin-right: 0px;
+       margin-top:300px;
+
+    }
   </style>
 <body>
 
-
-<main>
-<?php
-/*請在這裹撰寫你的萬年曆程式碼*/  
-?>
+<!-- 下面的div是為了做查詢縮放框框 -->
+<div class="inquire">123</div>
 <!-- 選擇日期 -->
 <!-- <form action='./index.php'>
     <input type='number' name='year'>
     <input type='number' name='month'>
     <input type='submit'>
 </form> -->
+<main>
+<?php
+/*請在這裹撰寫你的萬年曆程式碼*/  
+?>
+
 <?php
 //新增紀念日//
     $specialDate = [
