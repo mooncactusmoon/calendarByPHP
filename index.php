@@ -6,7 +6,7 @@
    *{
         box-sizing: border-box;
         font-family: Impact,Comic Sans MS,'monospace';
-        background-color: #D2E9FF;
+        background-color: black;
     }
     body{
         background-image: url('./image/b/<?php echo rand(1,5); ?>.jpg');
