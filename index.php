@@ -6,7 +6,7 @@
     * {
         box-sizing: border-box;
         font-family: Impact, Comic Sans MS, 'monospace';
-        background-color: black;
+        background-color: while;
 
     }
 
@@ -103,9 +103,9 @@
         padding-bottom: 30px;
         margin: auto;
         color: #003060;
-
         background-color: rgba(196, 225, 225, 0.5);
-
+        border-top-left-radius: 40px;
+        border-bottom-left-radius: 40px;
     }
 
     .aside {
@@ -116,6 +116,8 @@
         margin: auto;
         background-size: 100% 100%;
         background-image: url('./image/<?php echo rand(1, 68); ?>.jpg');
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
     }
 
     .aside-year {
@@ -141,25 +143,15 @@
         text-shadow: -1px -1px white, 1px 1px #333;
     }
 
-    footer {
-        flex-basis: 100%;
-        text-align: center;
-        color: white;
-        font-size: 100%;
-        padding-top: 15px;
-        padding-bottom: 0px;
-        background: none;
-        text-shadow: 0.1em 0.1em 0.2em black;
-    }
-
     .inquire {
         position: fixed;
         width: 12px;
         height: 150px;
         margin-right: 0px;
         margin-top: 300px;
-        border: 1px solid #AAFFEE;
+        border: 1px solid #4b6b65;
         border-left: none;
+        background-color: black;
 
     }
 
@@ -169,6 +161,7 @@
         width: 100px;
         height: 300px;
         margin-top: 30px;
+        
     }
 
     input {
@@ -178,7 +171,7 @@
         text-align: center;
         font-size: 15px;
         margin-top: 0px;
-
+        
     }
 
     .inquire:hover .input {
@@ -188,24 +181,49 @@
     }
 
     .img {
-        background: none;
+        /* background: none; */
         margin: 0px;
         width: 30px;
         height: 35px;
         background-color: rgba(0, 0, 0, 0.7);
     }
+    select{
+        width: 100px;
+        height: 30px;
+        font-size: 16px;
+        border: 1px solid #4b6b65;
+        /* border-radius: 40px; */
+    }
+    .bird{
+        width:30px;
+        height: 30px;
+        margin-top: 20px;
+        opacity: 0.5;
+    }
 </style>
 
 <body>
-
-    <!-- 下面的div是為了做查詢縮放框框 -->
     <div class="inquire">
         <img src="./image/other/2.png" alt="search" class="img">
         <div class="input">
             <form action='./index.php'>
-                <input type='number' name='year' placeholder="Entry year" min="1970">
-                <input type='number' name='month' placeholder="Entry month" min="1" max="12">
-                <input type='submit' value="Search" style="color:red;">
+                <input type='number' name='year' placeholder="&raquo; Entry year " min="1970">
+                <select name="month">
+                   <option value="1">January</option>
+                   <option value="2">February</option>
+                   <option value="3">March</option>
+                   <option value="4">April</option>
+                   <option value="5">May</option>
+                   <option value="6">June</optio;n>
+                   <option value="7">July</option>
+                   <option value="8">August</option>
+                   <option value="9">September</option>
+                   <option value="10">October</option>
+                   <option value="11">November</option>
+                   <option value="12">December</option>
+                </select>
+                <!-- <input type='number' name='month' placeholder="Entry month" min="1" max="12"> -->
+                <input type='submit' value="&rarr;Search&rarr;&rarr;" style="color:red;border-radius: 40px;">
             </form>
         </div>
         <img src="./image/other/3.png" alt="search" class="img">
@@ -297,6 +315,7 @@
                 <a href="index.php?year=<?= $nextyear; ?>&month=<?= $nextmonth; ?>">Next month<span class="title-day">&nbsp;&nbsp;<?= $nextyear . '/' . $nextmonth; ?></span></a>
             </div>
             <?php
+            $bird=rand(1,17);
 
             echo "<div class='div1'>";
 
@@ -309,7 +328,7 @@
                     if (($i == 0 && $j < $firstWeekfirstDay)) {
                         //第一row且$j<第一天星期不顯示數字
                         echo "<div class='cell cell$j'>";
-                        echo "&nbsp;";
+                        echo "<img class='bird' src='./image/other/bird$bird.png' alt='bird'>";
                         echo "</div>";
                     } else {
                         echo "<div class='cell cell$j'>";
@@ -317,7 +336,7 @@
                             $days = $i * 7 + $j + 1 - $firstWeekfirstDay;
                             //因為天數字串太長用$days代替,下面else也要在宣告一次
                             if ($days > $b[$month - 1]) {
-                                echo "&nbsp;";
+                                echo "<img class='bird' src='./image/other/bird$bird.png' alt='bird'>";
                             } else {
                                 $date = date("$month-") . $days;
                                 // $date=date("$year-$month-$days");
@@ -331,7 +350,7 @@
                         } else {
                             $days = $i * 7 + $j + 1 - $firstWeekfirstDay;
                             if ($days > $a[$month - 1]) {
-                                echo "&nbsp;";
+                                echo "<img class='bird' src='./image/other/bird$bird.png' alt='bird'>";
                             } else {
                                 $date = date("$month-") . $days;
                                 // $date=date("$year-$month-$days");
@@ -364,13 +383,12 @@
             //  echo "<pre>";
             //  print_r($zodiac);
             //  echo "</pre>";
-            $animal = ['鼠', '牛', '虎', '兔', '龍', '蛇', '馬', '羊', '猴', '雞', '狗', '豬'];
+            // $animal = ['鼠', '牛', '虎', '兔', '龍', '蛇', '馬', '羊', '猴', '雞', '狗', '豬'];
             $img = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
             $c = ($year - 4) % 12;
             echo "<div class='aside-year'>";
             echo "<h1>Perpetual Calendar</h1>";
-            echo "<img src='./image/y/$img[$c].png' style='background:none;opacity:0.9;' width='55px' height='55px' 
-   >";
+            echo "<img src='./image/y/$img[$c].png' style='background:none;opacity:0.9;' width='52px' height='52px'>";
             echo '&nbsp' . $zodiac[($year - 4) % 60];
             //    echo $animal[($year-4)%12] . '年';
             echo "<br><br>";
@@ -379,13 +397,13 @@
             ?>
             <!-- 小月曆 -->
             <style>
+
                 .current {
                     position: relative;
                     bottom: 135px;
-                    left: 210px;
-                    background: none;
-                    text-shadow: 0.1em 0.1em 0.2em black;
+                    left: 200px;
                     font-size: 18px;
+                    opacity: 0.7;
                 }
 
                 .div2 {
@@ -397,36 +415,42 @@
                     flex-wrap: wrap;
                     justify-content: start;
                     align-content: start;
-                    border: 1px solid black;
-                    color: #46A3FF;
+                    border: 0px;
                     position: relative;
                     bottom: 135px;
-                    left: 100px;
-                    opacity: 0.7;
+                    left: 90px;
+                    opacity: 0.6;
                 }
 
                 .cell22 {
                     width: 25px;
                     height: 15px;
-                    border: 1px solid black;
+                    border: 0px ;
                     display: inline-block;
                     font-size: 5px;
                     text-align: center;
                     background-color: #ECF5FF;
+                    border-radius: 25%;
                 }
-
+                
                 .weeks2 {
-                    color: #003060;
+                    border-radius: 25%;
                     background-color: wheat;
                     font-size: 10px;
                     padding-top: 2px;
                     width: 25px;
                     height: 15px;
-                    border: 1px solid black;
+                    border: 0px ;
                     display: inline-block;
                     text-align: center;
-                    text-shadow: 1px 1px white, -1px -1px #444;
                 }
+                .spanday{
+                    border-radius: 25%;
+                    background:#000093;
+                    font-size:15px;
+                    color:white;
+                }
+                
             </style>
             <?php
             $a = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -437,7 +461,7 @@
             $m = date("m");
             $y = date("Y");
             $d = date("j");
-            echo "<header class='current'>";
+            echo "<header class='current'><a class='calendar' href='index.php'>";
             echo "Current date" . ":" . $y . "/" .  $m;
             echo "</header>";
             echo "<div class='div2'>";
@@ -461,7 +485,7 @@
                             } else {
                                 $date = date("$m-") . $days;
                                 if ($days == $d) {
-                                    echo "<span style='background: #00FFFF'>$d</sapn>";
+                                    echo "<span class='spanday'>&nbsp;&nbsp;$d&nbsp;&nbsp;</sapn>";
                                 } else {
 
                                     echo $days;
@@ -476,7 +500,7 @@
                                 // echo $days;
 
                                 if ($days == $d) {
-                                    echo "<span style='background:#000093;font-size:15px;color:white;'>&nbsp;&nbsp;$d&nbsp;&nbsp;</sapn>";
+                                    echo "<span class='spanday'>&nbsp;&nbsp;$d&nbsp;&nbsp;</sapn>";
                                 } else {
 
                                     echo $days;
@@ -487,11 +511,36 @@
                     }
                 }
             }
-            echo "</div>";
+            echo "</div></a>";
             ?>
             <!-- 小月曆結束 -->
         </aside>
-        <footer>&copy小月 2021<br><span style="color:gray;background:none;">圖庫來源:Unsplash & Iconshock & Myself</span></footer>
+        <style>
+            footer {
+                flex-basis: 100%;
+                text-align: center;
+                color: #cad9d9;
+                font-size: 100%;
+                padding-top: 15px;
+                padding-bottom: 0px;
+                background: none;
+                text-shadow: 0.1em 0.1em 0.2em black;
+            }
+            .footer2{
+                color:#959c9c;
+                background:none;
+                text-shadow: 0.1em 0.1em 0.2em black;
+            }
+            .footer2>a:link,
+            .footer2>a:visited,
+            .footer2>a:hover,
+            .footer2>a:active{
+                color:#acb5b5;
+                background:none;
+                text-shadow: 0.1em 0.1em 0.2em black;
+            }
+        </style>
+        <footer>&copy Cactus月 2021<br><span class="footer2">The Image Source : <a href="https://unsplash.com/">Unsplash</a> & <a href="https://www.iconshock.com/">Iconshock</a> & Myself</span></footer>
     </main>
 </body>
 <html>
