@@ -7,6 +7,7 @@
         box-sizing: border-box;
         font-family: Impact, Comic Sans MS, 'monospace';
         background-color: while;
+        cursor: url('./image/other/parrot.png'),auto;
 
     }
 
@@ -142,25 +143,24 @@
     }
     .inquire {
         position: fixed;
-        width: 12px;
+        width: 15px;
         height: 150px;
         margin-right: 0px;
         margin-top: 300px;
         border: 1px solid #4b6b65;
         border-left: none;
         background-color: black;
-
     }
-
     .input {
         display: none;
         position: absolute;
         width: 100px;
-        height: 300px;
+        height: 90px;
         margin-top: 30px;
-        
     }
-
+    input{
+        border: 0px;
+    }
     input {
         background-color: #ECF5FF;
         width: 100px;
@@ -168,13 +168,13 @@
         text-align: center;
         font-size: 15px;
         margin-top: 0px;
-        
+        border-radius: 10px;
+        color: #120b63;
     }
 
     .inquire:hover .input {
         display: block;
         background: none;
-
     }
 
     .img {
@@ -189,13 +189,15 @@
         height: 30px;
         font-size: 16px;
         border: 1px solid #4b6b65;
-        /* border-radius: 40px; */
+        border-radius: 10px;
+        text-align: center;
+        color: #120b63;
     }
     .bird{
         width:30px;
         height: 30px;
         margin-top: 20px;
-        opacity: 0.5;
+        opacity: 0.6;
     }
 </style>
 
@@ -220,7 +222,7 @@
                    <option value="12">December</option>
                 </select>
                 <!-- <input type='number' name='month' placeholder="Entry month" min="1" max="12"> -->
-                <input type='submit' value="&rarr;Search&rarr;&rarr;" style="color:red;border-radius: 40px;">
+                <input type='submit' value="Search&rarr;&rarr;" style="color:#c7161e;border-radius: 40px;">
             </form>
         </div>
         <img src="./image/other/3.png" alt="search" class="img">
@@ -434,9 +436,9 @@
                     border-radius: 25%;
                     background-color: wheat;
                     font-size: 10px;
-                    padding-top: 2px;
+                    padding-top: 1px;
                     width: 25px;
-                    height: 15px;
+                    height: 17px;
                     border: 0px ;
                     display: inline-block;
                     text-align: center;
@@ -447,12 +449,8 @@
                     font-size:15px;
                     color:white;
                 }
-                
             </style>
             <?php
-            $a = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-            $b = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-            $td = ['Sun.', 'Mon.', 'Tue.', 'Wed.', 'Thu.', 'Fri.', 'Sat.'];
             $firstDay2 = date("Y-m-01");
             $firstWeekfirstDay2 = date("w", strtotime($firstDay2));
             $m = date("m");
@@ -469,7 +467,6 @@
                 for ($j = 0; $j < 7; $j++) {
 
                     if (($i == 0 && $j < $firstWeekfirstDay2)) {
-                        //第一row且$j<第一天星期不顯示數字
                         echo "<div class='cell22 cell$j'>";
                         echo "&nbsp;";
                         echo "</div>";
@@ -494,8 +491,6 @@
                                 echo "&nbsp;";
                             } else {
                                 $date = date("$m-") . $days;
-                                // echo $days;
-
                                 if ($days == $d) {
                                     echo "<span class='spanday'>&nbsp;&nbsp;$d&nbsp;&nbsp;</sapn>";
                                 } else {
@@ -518,7 +513,7 @@
                 text-align: center;
                 color: #cad9d9;
                 font-size: 100%;
-                padding-top: 15px;
+                padding-top: 40px;
                 padding-bottom: 0px;
                 background: none;
                 text-shadow: 0.1em 0.1em 0.2em black;
@@ -534,7 +529,7 @@
                 text-shadow: 0.1em 0.1em 0.2em black;
             }
         </style>
-        <footer>&copy;&nbsp;&nbsp; <a class='mine' href="https://github.com/mooncactusmoon">Cactus月</a>&nbsp;&nbsp; 2021<br><span class="footer2">The Image Source : <a href="https://unsplash.com/">Unsplash</a> & <a href="https://www.iconshock.com/">Iconshock</a> & Myself</span></footer>
+        <footer>&copy;&nbsp;&nbsp; <a class='mine' href="https://github.com/mooncactusmoon">Cactus月</a>&nbsp;&nbsp; 2021<br><span class="footer2">The Image Source :&nbsp; <a href="https://unsplash.com/">Unsplash</a>&nbsp; &&nbsp; <a href="https://www.iconshock.com/">Iconshock</a>&nbsp; &&nbsp; Myself</span></footer>
     </main>
 </body>
 <html>
