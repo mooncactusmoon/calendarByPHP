@@ -12,7 +12,7 @@
 
     body {
         background-image: url('./image/b/<?php echo rand(1, 5); ?>.jpg');
-
+        margin: 0px;
         width: 100%;
     }
 
@@ -133,16 +133,13 @@
     }
 
     a:link,
-    a:visited,
-    a:hover,
-    a:active {
+    a:visited{
         color: rgb(22, 76, 156);
         text-decoration: none;
         background: none;
         /* text-shadow: 1px 1px white, -1px -1px #444; */
         text-shadow: -1px -1px white, 1px 1px #333;
     }
-
     .inquire {
         position: fixed;
         width: 12px;
@@ -516,7 +513,7 @@
             <!-- 小月曆結束 -->
         </aside>
         <style>
-            footer {
+            footer,.mine:link,.mine:visited{
                 flex-basis: 100%;
                 text-align: center;
                 color: #cad9d9;
@@ -531,16 +528,13 @@
                 background:none;
                 text-shadow: 0.1em 0.1em 0.2em black;
             }
-            .footer2>a:link,
-            .footer2>a:visited,
-            .footer2>a:hover,
-            .footer2>a:active{
+            .footer2>a:link,.footer2>a:visited{
                 color:#acb5b5;
                 background:none;
                 text-shadow: 0.1em 0.1em 0.2em black;
             }
         </style>
-        <footer>&copy Cactus月 2021<br><span class="footer2">The Image Source : <a href="https://unsplash.com/">Unsplash</a> & <a href="https://www.iconshock.com/">Iconshock</a> & Myself</span></footer>
+        <footer>&copy;&nbsp;&nbsp; <a class='mine' href="https://github.com/mooncactusmoon">Cactus月</a>&nbsp;&nbsp; 2021<br><span class="footer2">The Image Source : <a href="https://unsplash.com/">Unsplash</a> & <a href="https://www.iconshock.com/">Iconshock</a> & Myself</span></footer>
     </main>
 </body>
 <html>
