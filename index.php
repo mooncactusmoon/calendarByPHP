@@ -79,9 +79,6 @@
         font-size: 50px;
         text-shadow: -1px -1px white, 1px 1px #333;
     }
-    .div-title>a:hover{
-        cursor: url('./image/other/kiwi2.png'),auto;
-    }
     a>span {
         font-size: 20px;
         color: rgb(159, 178, 207);
@@ -225,7 +222,7 @@
                    <option value="12">December</option>
                 </select>
                 <!-- <input type='number' name='month' placeholder="Entry month" min="1" max="12"> -->
-                <input type='submit' value="Search&rarr;&rarr;" style="color:#c7161e;border-radius: 40px;">
+                <input type='submit' value="Search&rarr;&rarr;" style="color:#c7161e;border-radius: 40px;cursor: url('./image/other/kiwi2.png'),auto;">
             </form>
         </div>
         <img src="./image/other/3.png" alt="search" class="img">
