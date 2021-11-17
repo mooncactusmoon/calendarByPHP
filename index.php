@@ -12,9 +12,14 @@
     }
 
     body {
+        /* 有透明度的黑色半透明遮罩 */
+        background-color: rgba(0, 0, 0, .3);
+        /* 設置背景混和模式為相乘模式 */
+        background-blend-mode: multiply; 
         background-image: url('./image/b/<?php echo rand(1, 5); ?>.jpg');
         margin: 0px;
         width: 100%;
+        
     }
 
     .div1 {
