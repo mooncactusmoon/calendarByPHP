@@ -43,6 +43,7 @@
 
     .cell:hover {
         background-color: #FFEBCD;
+        cursor: url('./image/other/lovebird.png'),auto;
     }
 
     .weeks {
@@ -78,7 +79,9 @@
         font-size: 50px;
         text-shadow: -1px -1px white, 1px 1px #333;
     }
-
+    .div-title>a:hover{
+        cursor: url('./image/other/kiwi2.png'),auto;
+    }
     a>span {
         font-size: 20px;
         color: rgb(159, 178, 207);
@@ -206,7 +209,7 @@
         <img src="./image/other/2.png" alt="search" class="img">
         <div class="input">
             <form action='./index.php'>
-                <input type='number' name='year' placeholder="&raquo; Entry year " min="1970">
+                <input type='number' name='year' placeholder="Entry AD year " min="1970" required="required">
                 <select name="month">
                    <option value="1">January</option>
                    <option value="2">February</option>
@@ -396,7 +399,6 @@
             ?>
             <!-- 小月曆 -->
             <style>
-
                 .current {
                     position: relative;
                     bottom: 135px;
