@@ -31,7 +31,7 @@
         flex-wrap: wrap;
         justify-content: start;
         align-content: start;
-        border: 1px solid black;
+        border: 1px solid #daf2f1;
         color: #003060;
 
     }
@@ -39,7 +39,7 @@
     .cell {
         width: 100px;
         height: 70px;
-        border: 1px solid black;
+        border: 1px solid #daf2f1;
         display: inline-block;
         font-size: 28px;
         text-align: center;
@@ -57,7 +57,7 @@
         padding-top: 10px;
         width: 100px;
         height: 70px;
-        border: 1px solid black;
+        border: 1px solid #daf2f1;
         display: inline-block;
         text-align: center;
         text-shadow: 1px 1px white, -1px -1px #444;
