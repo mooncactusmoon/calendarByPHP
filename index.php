@@ -534,8 +534,8 @@
             }
         </style>
     <footer>
-            &copy;&nbsp;&nbsp; <a class='mine' href="https://github.com/mooncactusmoon">Cactus月</a>&nbsp;&nbsp; 2021<br>
-        <span class="footer2">The Image Source :&nbsp; <a href="https://unsplash.com/">Unsplash</a>&nbsp; &&nbsp; <a href="https://www.iconshock.com/">Iconshock</a>&nbsp; &&nbsp; Cactus月 
+            &copy;&nbsp;&nbsp; <a class='mine' href="https://github.com/mooncactusmoon" target="_blank">Cactus月</a>&nbsp;&nbsp; 2021<br>
+        <span class="footer2">The Image Source :&nbsp; <a href="https://unsplash.com/" target="_blank">Unsplash</a>&nbsp; &&nbsp; <a href="https://www.iconshock.com/" target="_blank">Iconshock</a>&nbsp; &&nbsp; Cactus月 
         <br><img src="./image/other/quarantine_time.png" width="20px" height="20px">&nbsp;&nbsp;Time zone&nbsp;&nbsp;:&nbsp;&nbsp;Asia/Taipei&nbsp;&nbsp;<img src="./image/other/quarantine_time.png" width="20px" height="20px"></span>
     </footer>
     </main>
