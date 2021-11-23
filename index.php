@@ -110,8 +110,9 @@
         margin: auto;
         color: #003060;
         background-color: rgba(196, 225, 225, 0.5);
-        border-top-left-radius: 40px;
-        border-bottom-left-radius: 40px;
+        backdrop-filter: blur(2px);
+        border-top-left-radius: 11px;
+        border-bottom-left-radius: 11px;
     }
 
     .aside {
@@ -122,8 +123,8 @@
         margin: auto;
         background-size: 100% 100%;
         background-image: url('./image/<?php echo rand(1, 68); ?>.jpg');
-        border-top-right-radius: 40px;
-        border-bottom-right-radius: 40px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
     .aside-year {
