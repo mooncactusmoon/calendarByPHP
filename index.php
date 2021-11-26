@@ -1,5 +1,5 @@
 <html>
-<title>萬年曆作業</title>
+<title>萬年曆</title>
 <style>
     /*請在這裹撰寫你的CSS*/
 
@@ -315,9 +315,8 @@
         <section class="section">
             <div class="div-title">
                 <h1><?= $year; ?>&nbsp;/&nbsp;<?= $month; ?></h1>
-                <a href="index.php?year=<?= $lastyear; ?>&month=<?= $lastmonth; ?>">Last month<span class="title-day">&nbsp;&nbsp;<?= $lastyear . '/' . $lastmonth; ?></span></a>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="index.php?year=<?= $nextyear; ?>&month=<?= $nextmonth; ?>">Next month<span class="title-day">&nbsp;&nbsp;<?= $nextyear . '/' . $nextmonth; ?></span></a>
+                <a href="index.php?year=<?= $lastyear; ?>&month=<?= $lastmonth; ?>" style="margin-right:200px;color:#d2ced6;">&#9668;<span class="title-day">&nbsp;&nbsp;<?= $lastyear . '/' . $lastmonth; ?></span></a>
+                <a href="index.php?year=<?= $nextyear; ?>&month=<?= $nextmonth; ?>" style="margin-left:200px;color:#d2ced6;"><span class="title-day"><?= $nextyear . '/' . $nextmonth; ?></span>&nbsp;&nbsp;&#9658;</a>
             </div>
             <?php
             $bird=rand(1,17);
